@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "2bf4de1a-8280-4eac-a726-a53421713cf7",
+		"name": "Talenavi Technical Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "60323631",
+		"_collection_link": "https://raffqt05-2710344.postman.co/workspace/R-A-F-F's-Workspace~93e2741b-bf4c-4f00-8383-8353f132a610/collection/60323631-2bf4de1a-8280-4eac-a726-a53421713cf7?action=share&source=collection_link&creator=60323631"
+	},
+	"item": [
+		{
+			"name": "Create Todo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Membuat Backend Todo API\",\r\n    \"assignee\": \"Nicholas\",\r\n    \"due_date\": \"2026-11-25\",\r\n    \"time_tracked\": 2.5,\r\n    \"status\": \"in_progress\",\r\n    \"priority\": \"high\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export All Todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos/export",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"export"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export by Assignee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos/export?assignee=Nicholas,John",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"export"
+					],
+					"query": [
+						{
+							"key": "assignee",
+							"value": "Nicholas,John"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export by Due Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos/export?due_date_start=2026-11-28&due_date_end=2026-11-30",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"export"
+					],
+					"query": [
+						{
+							"key": "due_date_start",
+							"value": "2026-11-28"
+						},
+						{
+							"key": "due_date_end",
+							"value": "2026-11-30"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export by Time Tracked",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos/export?time_tracked_min=2&time_tracked_max=3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"export"
+					],
+					"query": [
+						{
+							"key": "time_tracked_min",
+							"value": "2"
+						},
+						{
+							"key": "time_tracked_max",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export by Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos/export?status=pending,completed",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"export"
+					],
+					"query": [
+						{
+							"key": "status",
+							"value": "pending,completed"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export by Priority",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos/export?priority=medium,low",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"export"
+					],
+					"query": [
+						{
+							"key": "priority",
+							"value": "medium,low"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export by Title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/todos/export?title=Testing",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"todos",
+						"export"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Testing"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
